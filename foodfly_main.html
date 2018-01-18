@@ -1,0 +1,309 @@
+<<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- http 헤더에 실리는 정보. 서버가 이 정보로 페이지에 관한 정보를 모은다-->
+    <!-- 6번 줄은 IE8,9 호환을 위한 정보가 담김 -->
+    <!-- X-UA-Compatible은 html5표준이 아니라 경고가 나올 수 있다. -->
+    <meta http-equiv="X-UA-Compatible" content="requireActiveX=true">
+    <!-- chrome1 : 크롬이 설치되어 있다면 IE에서도 크롬 렌더링 사용 -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <meta charset="UTF-8">
+
+    <!-- 페이지를 설명할 수 있는 문자열 지정.  -->
+    <meta name="description" content="맛집 배달">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- 페이스북 오픈 그래픽 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="푸드플라이">
+    <meta property="og:description" content="기존에 배달되지 않은 맛집 배달">
+
+    <meta name="naver-site-verification" content="기존에 배달되지 않은 맛집 배달">
+    <!-- 검색 최적화 -->
+    <meta name="keyword" content="delivery, food delivery, Foodfly, Chefly, 배달사이트, 배달앱, 푸플, 배달대앻업체, 1인배달음식, 맛집배달, 맛집">
+
+
+  <title>푸드 플라이</title>
+
+  <script src="//kcf2.foodfly.co.kr/library/js/jquery-1.7.2.min.js"></script>
+  <link rel="stylesheet" href="/common/h5bp/css/style.css">
+  <link rel="stylesheet" href="/common/fancybox/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" href="/common/css/bubble.css?v=17103101">
+  <script type="text/javascript" src="/common/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <!-- language 어트리뷰트는 deprecated됨. html5에선 type도 의무가 아니다.   -->
+  <script language="javascript" type="text/javascript" src="/common/js/libs/jquery.alphanumeric.pack.js"></script>
+  <script>
+      $.getScript("//cdn.optimizely.com/js/3226360527.js");
+  </script>
+    <script type="text/javascript">
+	    var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-29780459-1']);
+		_gaq.push(['_setDomainName', 'foodfly.co.kr']);
+		_gaq.push(['_trackPageview']);
+	
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script><!-- Google Analytics -->
+    <script>(function() {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded) {
+            var fbds = document.createElement('script');
+            fbds.async = true;
+            fbds.src = '//connect.facebook.net/en_US/fbds.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(fbds, s);
+            _fbq.loaded = true;
+            }
+            _fbq.push(['addPixelId', '952616851423536']);
+            })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+    </script>
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=952616851423536&ev=PixelInitialized" /></noscript>
+    <!-- msc 160331 페이스북 픽셀 삽입(김용대 이사님 요청)-->
+    <!-- 기본 WCA 픽셀 - 전페이지 적용 -->
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '750092871759015');
+    fbq('track', "PageView");
+    </script>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Start Facebook Pixel Code DMC F-1 170510 -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.dmcf1q)return;n=f.dmcf1q=function(){n.calldmcf1?n.calldmcf1.apply(n,arguments):n.queue.push(arguments)};if(!f._dmcf1q)f._dmcf1q=n;n.push=n;n.loaded=!0;n.version='0.1';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','//dmcf1.com/rs/lib/pixel/dmcf1_1.1.0.js');
+    dmcf1q('init', 'f1', {fbpid : '1601572646536832'}); // 픽셀 ID
+    dmcf1q('track', 'PageView', {product_catalog_id : '754500004718334'}); // 카탈로그 ID
+    </script>
+</head>
+<body>
+    <header>
+        <div class="top_cross_banner">
+            <div class="banner_foodfly pull-left">
+                <!-- 쉐이딩 효과를 가진 class -->
+                <div class="dim">
+                    <div class="btn_cur">&nbsp;</div>
+                </div>
+            </div>
+            <div class="banner_martfly pull-left" onclick='window.location.href="http://martfly.co.kr"'>
+                    <div class="btn_go">Go</div>
+            </div>
+        </div>
+        <div class="top-wrap">
+            <div class="container">
+                <div class="logo pull-left">
+                    <a href="http://www.foodfly.co.kr/"><img src="/common/img/newui/top/logo.png" alt="FoodFly"></a>
+                </div>
+                <div class="topsearch pull-left"></div>
+                <div class="pull-right">
+                    <!-- wrapper클래스에서 overflow 프로퍼티 사용 -->
+                    <div class="topnav_wrapper">
+                        <nav class="topnav">
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                                <li>11</li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="callnumber_wrapper">
+                        푸드플라이 고객센터 1688-2263
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sup-wrap container clearfix">
+            <div class="sub-top-wrapper">
+                <div id="sub-top-left">
+                    <img src="/common/img/newui/top/add_img.png" alt="위치 아이콘">
+                    <span class="addres_next" style="vertical-align: middle">서울 서대문구 창천동</span>
+                    <a href="javascript:fancybox_address();">
+                        <img src='/common/img/newui/top/main_add.png' alt="주소변경하기" style="margin-top:3px">
+                    </a>
+                </div>
+                <style type="text/css">
+                    #sub_top_left {
+                        float: left;
+                    }
+                    #sub_top_right {
+                        float: right;
+                    }
+                </style>    
+                <script>
+                    function fancybox_address() {
+                        $.fancybox({
+                            'width': '60%',
+                            'height': '80%',
+                            'transitionIn': 'fade',
+                            'transitionOut': 'fade',
+                            'href': '#select_dong',
+                            'type': 'inline'
+                        })
+                    }
+                </script>
+            </div>
+            <div class="sub_middle_nav">
+                <a href="http://www.foodfly.co.kr/restaurants">
+                    <div>
+                        <div class="middle_nav_btn">
+                            <img src="https://kcf1.foodfly.co.kr/pc/icons/main_nav_1.png" alt="글자 이미지">
+                        </div>
+                    </div>
+                </a>
+                <a href="http://www.foodfly.co.kr/theme">
+                    <div>
+                        <div class="middle_nav_btn">
+                            <img src="https://kcf1.foodfly.co.kr/pc/icons/main_nav_1.png" alt="글자 이미지">
+                        </div>
+                    </div>
+                </a>
+                <a href="http://www.foodfly.co.kr/recommend">
+                    <div>
+                        <div class="middle_nav_btn">
+                            <img src="https://kcf1.foodfly.co.kr/pc/icons/main_nav_1.png" alt="글자 이미지">
+                        </div>
+                    </div>
+                </a>
+                <a href="http://www.foodfly.co.kr/favorites">
+                    <div>
+                        <div class="middle_nav_btn">
+                            <img src="https://kcf1.foodfly.co.kr/pc/icons/main_nav_1.png" alt="글자 이미지">
+                        </div>
+                    </div>
+                </a>
+            </div>    
+            <form class="form_sub_bottom_nav" method="GET" action="http://www.foodfly.co.kr/restaurants">
+                <div class="sub_bottom_nav">
+                    <div class="pull-left bottom_nav_btn_wrapper">
+                        <!-- input 박스 hidden -->
+                        <input type="checkbox" name="category_all" id="category_all" class="category category_all">
+                        <!-- input이 사라져, div안의 공간을 실질적으로 차지.  -->
+                        <label for="category_all"></label>
+                    </div>
+                    <div class="pull-left bottom_nav_btn_wrapper">
+                        <!-- input 박스 hidden -->
+                        <input type="checkbox" name="category_all" id="category_all" class="category category_all">
+                        <!-- input이 사라져, div안의 공간을 실질적으로 차지.  -->
+                        <label for="category_all"></label>
+                    </div>
+                    <div class="pull-left bottom_nav_btn_wrapper">
+                        <!-- input 박스 hidden -->
+                        <input type="checkbox" name="category_all" id="category_all" class="category category_all">
+                        <!-- input이 사라져, div안의 공간을 실질적으로 차지.  -->
+                        <label for="category_all"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div style="display:none;">
+            <div class="select_dong">
+                <div class="select_doing_top_wrapper">
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content" role="main"></div>
+    <footer></footer>
+
+    <!-- 전역 선언 -->
+    <script type="text/javascript">var BASE_URL = "http://www.foodfly.co.kr/";</script>
+    <script type="text/javascript" src="/common/js/main.js?v=170209"></script>
+    <script type="text/javascript" src="/common/js/util.js"></script>
+    <script type="text/javascript" src="/common/js/libs/spin.min.js"></script>
+    <script type="text/javascript" src="/common/js/libs/jquery.spin.js"></script>
+    <script src="/common/js/libs/jquery.carouFredSel-5.6.1-packed.js"></script>
+    <script>
+        // 스크롤 시 로딩 스핀 만들기
+        // http://spin.js.org/
+        const spinner = null;
+        let isLoading = false;
+        let page = 2;
+        let total_page = 15;
+
+        function onScroll(event) {
+            // 로딩이 되었다면
+            if(!isLoading) {
+                // 현재 화면의 스크롤 위치 + 현재 화면의 높이 > 전체 문서의 높이 - 1000값을 계산 
+                let closeToBottom = ($(window).scrollTop() + $(window).height() > $(document).height() - 1000); 
+                if (closeToBottom && page <= total_page) {
+                    loadData();
+                }
+            }
+        }
+
+        // 스핀 로딩 이미지 띄우기
+        function loadData() {
+            isLoading = true;
+            const top = $('.restaurant-list').height();
+            const opts = { top : top + 'px', left: '372px'}
+            // opts변수에 담긴 내용을 바탕으로 스핀 로딩 구현
+            $('.restaurant-list').spin(opts);
+
+            // 레스토랑 페이지 리스트 받아오기
+            $.ajax({
+                type:"POST",
+                url: 'http://www.foodfly.co.kr/ajax/restaurant/get_list',
+                data: { page },
+                success : onloadData
+            })
+        }
+
+        function onloadData(data) {
+            isLoading = false;
+
+            $('.restaurant-list').spin(false);
+
+            if (data.status != 'OK') {
+                return;
+            }
+
+
+            let html = '';
+            let i = 0;
+            let addr = '';
+            let seq = 0;
+            
+            for (i in data.result.result) {
+               let r = data.result.result[i];
+            
+                // if(r.CM_REDIRECT_WEB.length > 0) {
+                //     html += '<a href="'+r.CM_REDIRECT_WEB+'">';
+                // } else {
+                //     html += '<a href="'+ BASE_URL + 'restaurants/show/' + r.CM_IDX + '">';
+                // }
+                // 왜 4로 나누는지?
+                if((seq++) % 4) {
+				html += '<div class="restaurant_box restaurant_box_margin" id="restaurant_box_'+r.CM_IDX+'" idx="'+r.CM_IDX+'" redirect="'+r.CM_REDIRECT_WEB+'">';
+			    }  else {
+				html += '<div class="restaurant_box restaurant_box_nomargin" id="restaurant_box_'+r.CM_IDX+'" idx="'+r.CM_IDX+'" redirect="'+r.CM_REDIRECT_WEB+'">';
+            }
+                // 검색결과 페이지 첫 번째 이미지
+                html += ' <span class="resetuarnt_box_bg hide">url(https://kcf1.foodfly.co.kr/restaurants/'+r.CM_IDX+'/'+r.CM_NEW_MAIN_IMG+')</span>';
+        
+                $('.restaurant-list').append = html;
+
+            }
+
+
+    </script>
+</body>
+</html>
