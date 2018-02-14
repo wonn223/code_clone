@@ -248,7 +248,77 @@
         </div>
         <script>let nav_mode ="near";</script>
     </header>
-    <div class="content" role="main"></div>
+    <div class="content" role="main">
+        <!-- middle nav -->
+        <div class="middlenav">
+            <div>
+                <img src="#" alt="네비게이션1 ">
+            </div>
+            <div>
+                <img src="#" alt="네비게이션2 ">
+            </div>
+            <div>
+                <img src="#" alt="네비게이션3 ">
+            </div>
+            <div>
+                <img src="#" alt="네비게이션4 ">
+            </div>
+            <div>
+                <img src="#" alt="네비게이션5 ">
+            </div>
+            <div>
+                <img src="#" alt="네비게이션6 ">
+            </div>
+        </div>
+        <div class="middlenav-bar"></div>
+        <!-- middlenav 별 레스토랑 목록  -->
+        <div id="restaurant" class="clearfix">
+            <div class="restaurantList">
+                <a href="#">
+                    <div class="restaurantbox">
+                        <!-- 이미지 -->
+                        <!-- 이미지 안에 여러 번의 글자를 넣을 때 span -->
+                        <span>url()</span>
+                        <span>url()</span>
+                        <div class="restaurant-info">
+                            <span>레스토랑이름</span>
+                            <div>
+                                <span>분류</span>
+                                <span>피자</span>
+                                <span>파스타</span>
+                                <span>리조또</span>
+                            </div>
+                            <div>
+                                <span>배달팁</span>
+                                <span>최소주문</span>
+                                <span>25,000원</span>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        /* 스타일 내부 선언 */
+                    </style>    
+                </a>
+                <a href="#">
+                        <div class="restaurantbox">
+                            <style>
+                                .resetaurnatbox {
+                                }
+                            </style>
+                        </div>
+                </a>
+                <a href="#">
+                        <div class="restaurantbox">
+                            <style>
+                                .resetaurnatbox {
+                                    
+                                }
+                            </style>
+                        </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <footer>
         <div class="container">
             <div class="footer_wrapper">
@@ -433,8 +503,20 @@
                 });
             })
 
-            // 
             $('window').scroll(onScroll);
+            
+            // 화면 중간 부분 메뉴 액티브 제거
+            $('middlenav').removeClass('active');
+
+            // 이벤트 버블링 고려하면 일일이 지정 안해도 됨
+            $('.btn_default').removeClass('active');
+		    $('.btn_search_distance').removeClass('active');
+		    $('.btn_search_fee').removeClass('active');
+		    $('.btn_search_min_amt').removeClass('active');
+		    $('.btn_search_rating').removeClass('active');
+		    $('.btn_search_random').removeClass('active');
+
+		    $('.btn_search_fee').addClass('active');
 
     </script>
 </body>
