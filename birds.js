@@ -23,6 +23,7 @@ const Bird = class {
 
     update() {
         this.ticks++;
+        // console.log('ticks'}, this.ticks);
         if(this.ticks % 15 === 0) this.sprtiesIndex = (this.sprtiesIndex + 1) % this.sprites.length;
         this.y += this.velY;
         this.velY += 1.25;
@@ -35,3 +36,4 @@ const Bird = class {
         this.ctx.drawImage(this.sprites[this.sprtiesIndex], renderX, renderY);
     }
 }
+

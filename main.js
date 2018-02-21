@@ -28,17 +28,51 @@ window.onload = () => {
     // ctx.fillStyle = "#FFFFFF"
     const bird = new Bird(250, 300, ctx);
 
-    const pipe1 = new Pipe(400, 20, 200, 20, ctx);
+    const pipes = [];
+
+    setInterval(() => {
+        let pipeSet = generateRandomPipes(ctx, canva.width, canva.height);
+        // console.log(pipeSet);
+        pipes.push(pipeSet.top, pipeSet.bottom);
+        console.log('파이프 모음', pipes);
+    }, 2000)
+    
+    const a = {};
 
     const gameLoop = () => {
         ctx.fillRect(0, 0, canva.width, canva.height );
         enviroment.update();
         enviroment.render();
-        pipe1.update();
-        pipe1.render();
+        pipes.forEach( pipe => {
+            console.log(pipe);
+            pipe.update();
+            pipe.render();
+        })
         bird.update();
         bird.render();
         window.requestAnimationFrame(gameLoop);
+    }
+
+    const generate = () => {
+        let lengthTop = Math.round(Math.random() * 200 + 100);
+        let legnthBottom = canva.height - 180 - lengthTop;
+        let returnVal = {
+            top : {},
+            bottom : {}
+        }
+    }
+
+    // 랜덤으로 변수의 값을 생성하면 그 변수를 패러미터로 라우팅을 한다.
+    // 
+
+    const generateRandomPipes = (ctx, canvasWidth, canvasHeight) => {
+        let lengthTop = Math.round(Math.random()*200+50);
+        let lengthBottom = canvasHeight - 200 - lengthTop;
+        let returnVal = {
+            top : new Pipe(canvasWidth, -5, lengthTop, 4, ctx),
+            bottom : new Pipe(canvasWidth, canvasHeight+5-lengthBottom, lengthBottom, 4, ctx)
+        };
+        return returnVal;
     }
 
     gameLoop();
