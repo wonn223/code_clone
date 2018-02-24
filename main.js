@@ -34,22 +34,24 @@ window.onload = () => {
         let pipeSet = generateRandomPipes(ctx, canva.width, canva.height);
         // console.log(pipeSet);
         pipes.push(pipeSet.top, pipeSet.bottom);
-        console.log('파이프 모음', pipes);
+        // console.log('파이프 모음', pipes);
     }, 2000)
     
-    const a = {};
 
     const gameLoop = () => {
         ctx.fillRect(0, 0, canva.width, canva.height );
         enviroment.update();
         enviroment.render();
         pipes.forEach( pipe => {
-            console.log(pipe);
+            // console.log(pipe);
             pipe.update();
             pipe.render();
         })
         bird.update();
         bird.render();
+        if (detectCollision(bird, pipes)) {
+            return drawGameOver(ctx, canva);
+        }
         window.requestAnimationFrame(gameLoop);
     }
 
@@ -73,6 +75,39 @@ window.onload = () => {
             bottom : new Pipe(canvasWidth, canvasHeight+5-lengthBottom, lengthBottom, 4, ctx)
         };
         return returnVal;
+    }
+
+    const detectCollision = (bird, pipes) => {
+        for(let i = 0; i < pipes.length; i++) {
+            let e = pipes[i];
+            let highPipe = e.xpos <= 0;
+            let x0 = e.xpos, x1 = e.xpos + e.width;
+            if (highPipe) {
+                let y0 = e.ypos + e.length;
+                let birdX = bird.x;
+                let birdY = bird.y - (bird.height / 2);
+                if( birdX > x0 && birdY < x1 && birdY < y0) return true;
+                }
+            else {
+                let y2 = e.ypos;
+                let a = bird.x;
+                let b = bird.y + bird.height/2;
+                if( a > x0 && a < x1 && b > y2) return true;
+            }
+        }
+        return false;
+    }
+
+    const drawGameOver = (ctx, c) => {
+        ctx.font = "30px Verdana";
+        ctx.textAlign = "center";
+        ctx.fillText("Game Over", canva.width/2, canva.height/2);
+        window.addEventListener('keydown', e => {
+            if(e.keyCode) {
+                window.location = '/birds.html';
+                return window.removeEventListener('keydown');
+            }
+        })
     }
 
     gameLoop();
